@@ -1,0 +1,136 @@
+
+html,
+body {
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+.landing
+{
+    width: 100%;
+    height: 100%;
+    background-image: url("img/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;  
+    font-weight: 400; 
+}
+
+.logo
+{
+    height: 100px;
+    width: 100px;  
+}
+.menu
+{
+
+   display: flex;
+   width: 100%;
+ 
+}
+
+nav > .nav-section
+{
+    display: flex; 
+    justify-content: right;
+}
+
+
+#nav-logo-section
+{
+    padding: 1rem 2rem;
+    flex-basis: calc(100%/1.5);
+    justify-content: flex-start;
+}
+
+#nav-link-section
+{
+    padding: 3rem 2rem;
+    flex-grow: 1;
+    gap: 3rem;
+    align-content: flex-end;
+}
+
+
+a
+{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+section
+{
+
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  
+}
+
+
+.form
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    height: 65%;
+    
+}
+
+.h1-text
+{
+    width: 100%;
+    margin-top: -40px;
+    display: flex;
+
+    justify-content: center;
+   color: white;
+   font-weight: 600;
+   font-size: 25px;
+
+}
+
+
+.form-group
+{
+   
+    font-size: 18px;
+}
+
+.btn
+{
+    display: flex;
+    border-radius:10px;
+	border:1px solid #fda55d;
+    padding: 10px 50px;
+    color: black;
+    background-color:  #fda55d;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.btn:hover
+{
+    background-color:  #f38022;
+    border:1px solid #f38022;
+}
+
+input[type='text'],
+input[type='password']
+{
+
+    border: 1px solid transparent;
+    height: 45px;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    outline: none;
+}
+
