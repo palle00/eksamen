@@ -2,11 +2,13 @@
 // Initialize the session
 session_start();
  
-// Check if the user is logged in, if not then redirect him to login page
+// Tjek om brugeren er logget ind, hvis ikke redirect dem til login siden
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }
+
+//connect til databasen
 require_once "config.php";
 
 //Få fat på id så vi kan delete bestemte reservationer
@@ -33,6 +35,7 @@ $link -> close();
 <head>
     <meta charset="UTF-8">
     <title>Admin panel</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="admin.css">
 
     <body>
@@ -51,7 +54,7 @@ $link -> close();
       <div class='card-area'> 
 <?php
 
-//loop over alle reservationerne og display dem i en table
+//loop over alle reservationerne og display dem i en table, hvis de ikke er tomme
     $num=mysqli_num_rows($query);
     if($num>0)
     {

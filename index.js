@@ -1,15 +1,17 @@
 
-
+//Setup starts værdier
 $(document).ready(function(){
   var index = 1;
   var ind1 = 1;
+
+  //når knappen bliver trykket på tilføjer vi 1 til index og kalder change()
   $( "#Btnn" ).click(function() {
     index++;
    
    change();
 });
 
-
+//når knappen bliver trykket på fjerner vi 1 til index og kalder change()
 $( "#Btnb" ).click(function() {
   index--;
  
@@ -21,6 +23,9 @@ $( "#Btnb" ).click(function() {
 function change()
 {
 
+
+  //switch case der tjekker index værdi og aktiverer/fjerner 
+  //de html elementer der ikke skal være aktiv
   switch(index)
   {
     case 1:
@@ -65,9 +70,12 @@ function change()
 }
 
 
+//Interval der bliver kaldt en gang hver 2,5 sekunder (2500 millisekunder) 
+
 setInterval(function() 
 {
-    $("#V").animate({
+  //animation der får pilen på landingpage til at hoppe op og ned
+  $("#V").animate({
       'marginBottom': '5px'});
          
           $("#V").animate({
