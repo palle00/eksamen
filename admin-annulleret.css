@@ -1,10 +1,11 @@
 *
-{
-    
+{   
     box-sizing: border-box;
 }
+
 html,
-body {
+body 
+{
     background-color: #E4E1D3;
     height: 100%;
     width: 100%;
@@ -13,7 +14,6 @@ body {
 
 
 .all
-
 {
     display: flex;
     width: 100%;
@@ -26,12 +26,11 @@ body {
     width: 9%;
     background-color: rgb(253, 165, 93);
     position: sticky;
-     top: 0;
+    top: 0;
 }
 
 .menu-item
 {
-    
     display: flex;
     height: fit-content;
     justify-content: center;
@@ -85,48 +84,42 @@ a
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
-    
+    gap: 2rem;  
 }
 
 .table-card
-{
-    
+{  
     width: 25%;
     height: fit-content;
     display: flex;
     flex-wrap: wrap;
     box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
--webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
--moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
-    
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5);  
 }
 
 
-.table-num
+.table-num      
 {
     width: 100%;
     height: 50px;
-    background-color: #ACA799;
+    background-color: #7e0000;
     display: flex;
     align-items: center;
-
-   
 }
 
-.table
-{   padding: 0px 10px;
-    width: 100%;  
-    
+.table, .fjern
+{   
+    padding: 0px 10px;
+    width: 100%;     
 }
+
 
 .table a
 {
 
     color: white;
 }
-
-
 
 .table-info
 {
@@ -154,7 +147,7 @@ nav > .nav-section
 {
     padding: 3rem 2rem;
     flex-grow: 1;
-    gap: 3rem;
-    
+    gap: 3rem;   
 }
+
 
