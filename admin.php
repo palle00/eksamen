@@ -87,18 +87,18 @@ $link -> close();
 
     <section class="all">
 
-        <div class="menu">
-                <div class="menu-item" onclick="location.href='admin.php';" style="cursor:pointer;"  id="active">
+        <div class="p-menu">
+                <div class="p-menu-item" onclick="location.href='admin.php';" style="cursor:pointer;"  id="active">
                 <i class="fa fa-list fa-2x"> </i>
-                    <a class="menu-text">Reservationer</a>
+                    <a class="p-menu-text">Reservationer</a>
                 </div>
-                <div class="menu-item" onclick="location.href='admin-done.php';" style="cursor:pointer;">
+                <div class="p-menu-item" onclick="location.href='admin-done.php';" style="cursor:pointer;">
                     <i class="fa fa-check fa-2x"> </i>
-                    <a class="menu-text">Gennemført</a>
+                    <a class="p-menu-text">Gennemført</a>
                 </div>
-                <div class="menu-item" onclick="location.href='admin-annulleret.php';" style="cursor:pointer;">
+                <div class="p-menu-item" onclick="location.href='admin-annulleret.php';" style="cursor:pointer;">
                     <i class="fa fa-ban fa-2x"> </i>
-                    <a class="menu-text">Annulleret</a>
+                    <a class="p-menu-text">Annulleret</a>
                 </div>
 
                     <?php 
@@ -106,22 +106,21 @@ $link -> close();
                         if(htmlspecialchars($_SESSION["username"]) == "super")
                         
                          echo"
-                                <div class='menu-item' onClick='gotoUrl()' style='cursor:pointer;'>
+                                <div class='p-menu-item' onClick='gotoUrl()' style='cursor:pointer;'>
                                     <i class='fa fa-trash fa-2x'> </i>
-                                    <a class='menu-text'>Fjern alt</a>
+                                    <a class='p-menu-text'>Fjern alt</a>
                                 </div>
                             ";
                     ?>
 
-
-             
-                <div class="menu-item" id="log" onclick="location.href='logout.php';" style="cursor:pointer;">
+                <div class="p-menu-item" id="log" onclick="location.href='logout.php';" style="cursor:pointer;">
                     <i class="fa fa-sign-out fa-2x"> </i>
-                    <a class="menu-text">Log Ud</a>
+                    <a class="p-menu-text">Log Ud</a>
                 </div>
 
         </div>
 
+       
         
         <div class='card-area'> 
     <?php
@@ -198,7 +197,42 @@ $link -> close();
     ?>
     </div>
 
+    <div class="m-menu">
+                <div class="m-menu-item" onclick="location.href='admin.php';" style="cursor:pointer;"  id="active">
+                <i class="fa fa-list fa-2x"> </i>
+                    <a class="m-menu-text">Reservationer</a>
+                </div>
+                <div class="m-menu-item" onclick="location.href='admin-done.php';" style="cursor:pointer;">
+                    <i class="fa fa-check fa-2x"> </i>
+                    <a class="p-menu-text">Gennemført</a>
+                </div>
+                <div class="m-menu-item" onclick="location.href='admin-annulleret.php';" style="cursor:pointer;">
+                    <i class="fa fa-ban fa-2x"> </i>
+                    <a class="m-menu-text">Annulleret</a>
+                </div>
 
+                    <?php 
+
+                        if(htmlspecialchars($_SESSION["username"]) == "super")
+                        
+                         echo"
+                                <div class='m-menu-item' onClick='gotoUrl()' style='cursor:pointer;'>
+                                    <i class='fa fa-trash fa-2x'> </i>
+                                    <a class='m-menu-text'>Fjern alt</a>
+                                </div>
+                            ";
+                    ?>
+
+
+             
+                <div class="m-menu-item" id="log" onclick="location.href='logout.php';" style="cursor:pointer;">
+                    <i class="fa fa-sign-out fa-2x"> </i>
+                    <a class="m-menu-text">Log Ud</a>
+                </div>
+    </div>
+
+                
+        </div>
         
 
     </section>

@@ -38,6 +38,7 @@ nav > .nav-section
 }
 
 
+
 #nav-logo-section
 {
     padding: 1rem 2rem;
@@ -133,4 +134,12 @@ input[type='password']
     width: 100%;
     outline: none;
 }
+
+.error
+{
+    color: red;
+    width: 100%;
+    display: flex;
+
+}   
 

@@ -584,6 +584,9 @@ label
     {
         justify-content: left;
     }
+
+    #head
+    {justify-content: center;}
     
 
     #menuer

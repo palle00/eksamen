@@ -115,22 +115,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       </nav>
 
 
-        <?php 
-        if(!empty($login_err)){
-            echo '<div>' . $login_err . '</div>';
-           
-        }     
-        ?>
+    
 
         <div class="h1-text"><h1>Admin Login</h1></div>
-            
+       
 
     <div class="form">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <?php 
+        if(!empty($login_err)){
+            echo '<div class="error">' . $login_err . '</div>';
+           
+        }     
+        ?>
             <div class="form-group">
                 <label for="username"><b>Brugernavn</b></label>
                 <input id="username" type="text" name="username" class="form-control">
-            </div>    
+            </div>
+            
             <div class="form-group">
                 <label for="password"><b>Kode</b></label>
                 <input id="password" type="password" name="password" class="form-control">
