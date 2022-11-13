@@ -19,7 +19,6 @@ $( "#Btnb" ).click(function() {
 });
 
 
-
 function change()
 {
 
@@ -74,6 +73,9 @@ function change()
 
 setInterval(function() 
 {
+
+  if($("#V").is(":hover"))
+  {
   //animation der får pilen på landingpage til at hoppe op og ned
   $("#V").animate({
       'marginBottom': '5px'});
@@ -84,6 +86,7 @@ setInterval(function()
             
           $("#V").animate({
             'marginBottom': '-10px'});
+          }
 }, 2500);
 
 

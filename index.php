@@ -9,18 +9,18 @@ if (!empty($_POST['Navn']))
    
    if (mysqli_num_rows($result)==0)
    { 
-    $navn = $_POST['Navn'];
-    $tlf = $_POST['Tlf'];
-    $klok = $_POST['Klok'];
-    $bord = $_POST['Bord'];
-    $laks = $_POST['Laks'];
-    $pastab = $_POST['PB'];
-    $stegetf = $_POST['SF'];
-    $Bøfml = $_POST['BF'];
-    $muffin = $_POST['Muffin'];
-    $vanilje = $_POST['VS'];
-    $allergi = $_POST['Allergi'];
-    $antal = $_POST['Antal'];
+    $navn = htmlspecialchars($_POST['Navn']);
+    $tlf = htmlspecialchars($_POST['Tlf']);
+    $klok = htmlspecialchars($_POST['Klok']);
+    $bord = htmlspecialchars($_POST['Bord']);
+    $laks = htmlspecialchars($_POST['Laks']);
+    $pastab = htmlspecialchars($_POST['PB']);
+    $stegetf = htmlspecialchars($_POST['SF']);
+    $Bøfml = htmlspecialchars($_POST['BF']);
+    $muffin = htmlspecialchars($_POST['Muffin']);
+    $vanilje = htmlspecialchars($_POST['VS']);
+    $allergi = htmlspecialchars($_POST['Allergi']);
+    $antal = htmlspecialchars($_POST['Antal']);
     
    }
    else
@@ -91,6 +91,7 @@ if (!empty($_POST['Navn']))
          <h1>Restaurant Trendsetter</h1>
          <h2>Nemt og hurtigt</h2>    
       </div>
+
       <div class="cta-div"><a class="cta" href="#f" alt="Link til bestille bord"><b>Bestil bord</b></a></div>
            
       <div class="V"><i class="fas fa-caret-down fa-5x" id="V"></i></div>
@@ -108,9 +109,7 @@ if (!empty($_POST['Navn']))
           kokke og personale klar til at give jer en uforpligtende oplevelse. 
           Du kan klare betalingen online når du bestiller og dermed kan i gå som det passer jer.</p>
 
-          <div class="spacer"> </div>
-      
-
+      <div class="spacer"> </div>
    </section>
 
    <section id="menu" class="menu">
@@ -125,7 +124,6 @@ if (!empty($_POST['Navn']))
                      <h3 class="text" id="menuer">Forretter</h3>
                         <h4 class="text" id="ret">Laks - 50kr</h4>
                         <p class="text" id="ret-beskrivelse"> <em>Laks med asparges, nye kartofler og citron sauce</em></p>
-                     
                         <h4 class="text" id="ret">Pasta bolognese - 50kr</h4>
                         <p class="text" id="ret-beskrivelse"> <em>Frisk pasta med oksekød, tomatsovs, løg og champignon. Serveres med parmesanost</em></p>
                   </div>      
@@ -137,7 +135,6 @@ if (!empty($_POST['Navn']))
                     <h3 class="text" id="menuer">Hovedretter</h3>
                         <h4 class="text" id="ret">Stegt flæsk - 65kr</h4>
                         <p class="text" id="ret-beskrivelse"> <em>Klassisk stegt flæsk med persillesovs og nye danske kartofler</em></p>
-                     
                         <h4 class="text" id="ret">Bøf med løge - 65kr</h4>
                         <p class="text" id="ret-beskrivelse"> <em>Hakkebøffer af oksekød stegt i løg. Serveres med pommes og bearnaisesauce</em></p>
                   </div>    
@@ -292,7 +289,7 @@ if (!empty($_POST['Navn']))
            
            <label>
                <span>Har du nogle allergier? </span> 
-               <textarea id="Allergi" name="Allergi" rows="6" cols="78" maxlength="255"> </textarea>
+               <textarea id="Allergi" name="Allergi" rows="6" cols="78" maxlength="20"> </textarea>
             </label>
            
      </div>

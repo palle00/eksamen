@@ -37,6 +37,7 @@ $link -> close();
     <title>Admin panel</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="admin-done.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />     
     <body>
     
@@ -60,14 +61,27 @@ $link -> close();
 
         
         <script> 
-                    function gotoUrl(){
-                    let text = 'Slet alle gennemførte reservationer?'
-
-                    if(confirm(text) == true){
-                        location.href = "admin-done.php?drop=";
+                    
+function gotoUrl(){
+                        swal({
+                        title: "Slet alle gennemførte reservationer?",
+                        text: "Når de er slettet kan de ikke komme tilbage",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                        })
+                        .then((willDelete) => {
+                        if (willDelete) {
+                            
+                            
+                            location.href = "admin-done.php?drop=";
+                        } else {
+                            
+                        }
+                        });
                     }
-                }
              </script>
+ 
 
                     <?php 
 

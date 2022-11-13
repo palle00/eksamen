@@ -44,8 +44,6 @@ $svar = $link->query($delete);
 header("location: admin.php");
 }
 
-
-
     if(isset($_GET['fjern']))
     {
     $id=$_GET['id'];
@@ -103,18 +101,6 @@ $link -> close();
                     <a class="menu-text">Annulleret</a>
                 </div>
 
-
-
-            <script> 
-                    function gotoUrl(){
-                    let text = 'Slet alle reservationer?'
-
-                    if(confirm(text) == true){
-                        location.href = "admin.php?drop=";
-                    }
-                }
-             </script>
-
                     <?php 
 
                         if(htmlspecialchars($_SESSION["username"]) == "super")
@@ -151,7 +137,7 @@ $link -> close();
             <div class='table-card'> 
                 <div class='table-num'>
                     <div class='table'><a>Bord " .$result["Bord"]."</a></div>
-                    <div><a OnClick=\"return confirm('Tilføj reservation til gennemført?');\" href='admin.php?id={$result['ID']}&navn={$result['Navn']}&antal={$result['Antal']}&bord={$result['Bord']}&tlf={$result['Tlf']}&gennemført='''> <i class='fa fa-check fa-lg'> </i></a></div>
+                    <div><a OnClick=\"return confirm('Tilføj reservation til annulleret?');\" href='admin.php?id={$result['ID']}&navn={$result['Navn']}&antal={$result['Antal']}&bord={$result['Bord']}&tlf={$result['Tlf']}&gennemført='''> <i class='fa fa-check fa-lg'> </i></a></div>
                     <div><a OnClick=\"return confirm('Tilføj reservation til annulleret?');\" href='admin.php?id={$result['ID']}&navn={$result['Navn']}&antal={$result['Antal']}&bord={$result['Bord']}&tlf={$result['Tlf']}&fjern='''> <i class='fa fa-ban fa-lg'> </i></a></div>
                 </div>
 
