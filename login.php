@@ -19,14 +19,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Tjek om username er tom
     if(empty(trim($_POST["username"]))){
-        $username_err = "Indtast dit brugernavn";
+        $username_err = "err";
     } else{
         $username = trim($_POST["username"]);
     }
     
     // Tjek om password er tom
     if(empty(trim($_POST["password"]))){
-        $password_err = "Indtast din kode";
+        $password_err = "err";
     } else{
         $password = trim($_POST["password"]);
     }
@@ -40,17 +40,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($stmt = mysqli_prepare($link, $sql)){
             mysqli_stmt_bind_param($stmt, "s", $username);
             
+
+            //executer vores prepared statement
             if(mysqli_stmt_execute($stmt)){
          
+                //gem brugernavnet sikkert til senere brug
                 mysqli_stmt_store_result($stmt);
                 
                 // Tjek om brugernavnet eksister, hvis det gør så tjek password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
               
+                        //binder id username og hashed_password sammen
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+
+                    //Få fat på password og tjek om det passer med password på serveren
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
-                            // Hvis koden er korrekt starter vi en ny session 
+                            // Hvis password er korrekt starter vi en ny session 
                             session_start();
                             
                             // Lager alt data i session
@@ -70,15 +76,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $login_err = "Forkert brugernavn eller kode";
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                //hvis severen fejler smid en error
+                echo "Oops! Noget gik galt, prøv igen senere";
             }
 
-           
+           //luk for statements så der ikke kan blive fundet løse packets
             mysqli_stmt_close($stmt);
         }
     }
     
-   
+   //luk linke til severen
     mysqli_close($link);
 }
 ?>

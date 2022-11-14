@@ -23,11 +23,11 @@ if(isset($_GET['drop']))
 
 if(isset($_GET['gennemført']))
 {
-$id=$_GET['id'];
-$navn=$_GET['navn'];
-$antal=$_GET['antal'];
-$bord=$_GET['bord'];
-$tlf=$_GET['tlf'];
+$id=htmlspecialchars($_GET['id']);
+$navn=htmlspecialchars($_GET['navn']);
+$antal=htmlspecialchars($_GET['antal']);
+$bord=htmlspecialchars($_GET['bord']);
+$tlf=htmlspecialchars($_GET['tlf']);
 
 $sql = "INSERT INTO `done`(`ID`, `Navn`, `Antal`, `Bord`, `Tlf`) 
 VALUES (?, ?, ?, ?, ?)";
@@ -46,11 +46,11 @@ header("location: admin.php");
 
     if(isset($_GET['fjern']))
     {
-    $id=$_GET['id'];
-    $navn=$_GET['navn'];
-    $antal=$_GET['antal'];
-    $bord=$_GET['bord'];
-    $tlf=$_GET['tlf'];
+        $id=htmlspecialchars($_GET['id']);
+        $navn=htmlspecialchars($_GET['navn']);
+        $antal=htmlspecialchars($_GET['antal']);
+        $bord=htmlspecialchars($_GET['bord']);
+        $tlf=htmlspecialchars($_GET['tlf']);
 
     $sql = "INSERT INTO `reject`(`ID`, `Navn`, `Antal`, `Bord`, `Tlf`) 
     VALUES (?, ?, ?, ?, ?)";
@@ -135,8 +135,8 @@ $link -> close();
                 echo "
             <div class='table-card'> 
                 <div class='table-num'>
-                    <div class='table'><a>Bord " .$result["Bord"]."</a></div>
-                    <div><a OnClick=\"return confirm('Tilføj reservation til annulleret?');\" href='admin.php?id={$result['ID']}&navn={$result['Navn']}&antal={$result['Antal']}&bord={$result['Bord']}&tlf={$result['Tlf']}&gennemført='''> <i class='fa fa-check fa-lg'> </i></a></div>
+                    <div class='table'><a>Bord ".$result["Bord"]."</a></div>
+                    <div><a OnClick=\"return confirm('Tilføj reservation til gennemført?');\" href='admin.php?id={$result['ID']}&navn={$result['Navn']}&antal={$result['Antal']}&bord={$result['Bord']}&tlf={$result['Tlf']}&gennemført='''> <i class='fa fa-check fa-lg'> </i></a></div>
                     <div><a OnClick=\"return confirm('Tilføj reservation til annulleret?');\" href='admin.php?id={$result['ID']}&navn={$result['Navn']}&antal={$result['Antal']}&bord={$result['Bord']}&tlf={$result['Tlf']}&fjern='''> <i class='fa fa-ban fa-lg'> </i></a></div>
                 </div>
 
@@ -160,7 +160,7 @@ $link -> close();
 
                     if(!$result["Steget_flæsk"] == 0)
                     echo "
-                    <p>Steget Flæsk: <b>".$result["Steget_flæsk"]."</b></p>
+                    <p>Stegt Flæsk: <b>".$result["Steget_flæsk"]."</b></p>
                     ";
 
                     if(!$result["Bøf_med_løg"] == 0)
