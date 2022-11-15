@@ -1,9 +1,40 @@
 
-*
+html 
 {
-    
+    scroll-behavior: smooth;
+}
+
+/*Custom scrollbar - Firefox */
+*{
+    scrollbar-width: thin;
+    box-sizing: border-box;
+    scrollbar-color: rgb(253, 165, 93) #f1f1f1;
+    font-family: "Rubik", sans-serif;
     box-sizing: border-box;
 }
+ 
+
+/*Custom scrollbar - Chrome, Edge, and Safari */
+::-webkit-scrollbar 
+{
+    width: 8px;
+}
+  
+::-webkit-scrollbar-track 
+{
+    background: #f1f1f1;
+}
+  
+::-webkit-scrollbar-thumb 
+{
+    background: rgb(253, 165, 123);
+}
+  
+::-webkit-scrollbar-thumb:hover 
+{
+    background: rgb(253, 165, 53);
+}
+
 html,
 body {
     background-color: #E4E1D3;

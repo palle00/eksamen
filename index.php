@@ -9,6 +9,7 @@ if (!empty($_POST['Navn']))
    
    if (mysqli_num_rows($result)==0)
    { 
+      
     $navn = htmlspecialchars($_POST['Navn']);
     $tlf = htmlspecialchars($_POST['Tlf']);
     $klok = htmlspecialchars($_POST['Klok']);
@@ -184,9 +185,7 @@ if (!empty($_POST['Navn']))
       
     <div class="form-box">
    
-      <form id="f" action = "<?php $_PHP_SELF ?>" method = "POST">
-    
-
+      <form id="f" action = "<?php $_PHP_SELF?>" method = "POST">
       
       <p>Felter markeret med * skal udfyldes</p>   
       

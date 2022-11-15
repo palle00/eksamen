@@ -80,6 +80,7 @@ $link -> close();
     <title>Admin panel</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="admin.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
     
@@ -119,8 +120,25 @@ $link -> close();
                 </div>
 
         </div>
-
-       
+<script>
+        function gotoUrl(){
+    swal({
+    title: "Slet alle reservationer?",
+    text: "Når de er slettet kan de ikke komme tilbage",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+    })
+    .then((willDelete) => {
+    if (willDelete) {  
+        location.href = "admin.php?drop=";
+    } else {
+        
+    }
+    });
+}
+   
+</script>
         
         <div class='card-area'> 
     <?php

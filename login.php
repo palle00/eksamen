@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["username"]))){
         $username_err = "err";
     } else{
-        $username = trim($_POST["username"]);
+        $username = trim($_POST["username"]); 
     }
     
     // Tjek om password er tom
