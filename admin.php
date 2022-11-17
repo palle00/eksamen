@@ -13,7 +13,7 @@ require_once "config.php";
 
 //Få fat på id så vi kan delete bestemte reservationer
 
-
+//når der klikkes på fjern alt skal alt fra reservation fjernes
 if(isset($_GET['drop']))
 {
     $delete = "DELETE FROM `reservation` WHERE ID > 0";
@@ -21,6 +21,17 @@ if(isset($_GET['drop']))
     header("location: admin.php");
 }
 
+//når der klikkes på delete skal den bestemte reservation fjernes
+if(isset($_GET['delete']))
+{
+    $id=htmlspecialchars($_GET['id']);
+    $delete = "DELETE FROM `reservation` WHERE ID = $id";
+    $svar = $link->query($delete);
+    header("location: admin.php");
+}
+
+//når der klikkes på gennemført skal reservationen fjernes fra reservation table 
+//og flyttes til done table
 if(isset($_GET['gennemført']))
 {
 $id=htmlspecialchars($_GET['id']);
@@ -43,6 +54,9 @@ $svar = $link->query($delete);
 
 header("location: admin.php");
 }
+
+//når der klikkes på annuller skal reservationen fjernes fra reservation table 
+//og flyttes til annulleret table
 
     if(isset($_GET['fjern']))
     {
@@ -156,6 +170,12 @@ $link -> close();
                     <div class='table'><a>Bord ".$result["Bord"]."</a></div>
                     <div><a OnClick=\"return confirm('Tilføj reservation til gennemført?');\" href='admin.php?id={$result['ID']}&navn={$result['Navn']}&antal={$result['Antal']}&bord={$result['Bord']}&tlf={$result['Tlf']}&gennemført='''> <i class='fa fa-check fa-lg'> </i></a></div>
                     <div><a OnClick=\"return confirm('Tilføj reservation til annulleret?');\" href='admin.php?id={$result['ID']}&navn={$result['Navn']}&antal={$result['Antal']}&bord={$result['Bord']}&tlf={$result['Tlf']}&fjern='''> <i class='fa fa-ban fa-lg'> </i></a></div>
+                   ";
+                   if(htmlspecialchars($_SESSION["username"]) == "super")
+                   echo "
+                   <div><a OnClick=\"return confirm('Slet reservation?');\" href='admin.php?id={$result['ID']}&delete='''> <i class='fa fa-trash fa-lg'> </i></a></div>
+                   ";
+                   echo "
                 </div>
 
                 <div class='table-info'>
@@ -206,10 +226,7 @@ $link -> close();
         
             </div>
         
-                    ";
-
-
-                    
+                    ";      
             } 
         }
     ?>
@@ -240,8 +257,6 @@ $link -> close();
                                 </div>
                             ";
                     ?>
-
-
              
                 <div class="m-menu-item" id="log" onclick="location.href='logout.php';" style="cursor:pointer;">
                     <i class="fa fa-sign-out fa-2x"> </i>

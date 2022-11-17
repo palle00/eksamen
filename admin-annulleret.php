@@ -11,8 +11,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 //connect til databasen
 require_once "config.php";
 
-//Få fat på id så vi kan delete bestemte reservationer
-
 if(isset($_GET['drop']))
 {
     $delete = "DELETE FROM `reject` WHERE ID > 0";
@@ -111,7 +109,6 @@ $link -> close();
         <div class='table-card'> 
             <div class='table-num' id='annulleret'>
                 <div class='table'><a>Bord " .$result["Bord"]."</a></div>
-            </div>
             <div class='table-info'>
 
                 <p>Navn: <b>".$result["Navn"]."</b></p>

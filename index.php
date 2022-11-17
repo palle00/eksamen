@@ -9,7 +9,6 @@ if (!empty($_POST['Navn']))
    
    if (mysqli_num_rows($result)==0)
    { 
-      
     $navn = htmlspecialchars($_POST['Navn']);
     $tlf = htmlspecialchars($_POST['Tlf']);
     $klok = htmlspecialchars($_POST['Klok']);
@@ -22,7 +21,7 @@ if (!empty($_POST['Navn']))
     $vanilje = htmlspecialchars($_POST['VS']);
     $allergi = htmlspecialchars($_POST['Allergi']);
     $antal = htmlspecialchars($_POST['Antal']);
-    
+   
    }
    else
    {
@@ -41,7 +40,7 @@ if (!empty($_POST['Navn']))
     $stmt->execute();
 
 
-    echo '<script type="text/javascript">alert("Reservationen ved bord: '.$_POST['Bord'].' Kl: '.$_POST['Klok'].' er nu reseveret");
+    echo '<script type="text/javascript">alert("Reservationen ved bord: '.$_POST['Bord'].' Kl: '.$_POST['Time'].' er nu reseveret");
     window.location.href="index.php";
     </script>';
 
@@ -82,10 +81,6 @@ if (!empty($_POST['Navn']))
          <a href="https://twitter.com/" alt="Link til twitter"><img id="social-icon" alt="Twitter link" class="twitter" src="img/Twitter.webp"></a>
     
          <a href="https://instagram.com/" alt="Link til instagram"><img id="social-icon" alt="Instagram link" class="instagram" src="img/Instagram.webp"></a>
-        
-   
-   
-
       </nav>
 
       <div class="tag">
@@ -239,11 +234,11 @@ if (!empty($_POST['Navn']))
         <div class="form-group" id="food">
               <label>
                   <span>Laks</span>
-                  <input  id="Laks"  type = "number" name = "Laks" min="0" max="6" value="0" required/>
+                  <input class="selec" id="Laks"  type = "number" name = "Laks" min="0" max="6" value="0" required/>
                </label>
                <label>
                   <span>Pasta bolognese</span>
-                  <input  id="PB"  type = "number" name = "PB" min="0" max="6" value="0" required/>
+                  <input class="selec" id="PB"  type = "number" name = "PB" min="0" max="6" value="0" required/>
               </label>
         </div> 
 
@@ -259,11 +254,11 @@ if (!empty($_POST['Navn']))
            
            <label>
                <span>Stegt Flæsk</span>
-               <input  id="SF"  type = "number" name = "SF" min="0" max="6" value="0" required/>
+               <input class="selec" id="SF"  type = "number" name = "SF" min="0" max="6" value="0" required/>
             </label>
             <label>
                <span>Bøf med Løg</span>
-               <input  id="BF"  type = "number" name = "BF" min="0" max="6" value="0" required/>
+               <input class="selec" id="BF"  type = "number" name = "BF" min="0" max="6" value="0" required/>
            </label>
      </div> 
 
@@ -274,14 +269,14 @@ if (!empty($_POST['Navn']))
            
            <label>
                <span>Muffin </span> 
-               <input  id="Muffin"  type = "number" name = "Muffin" min="0" max="6" value="0" required/>
+               <input class="selec" id="Muffin"  type = "number" name = "Muffin" min="0" max="6" value="0" required/>
             </label>
             <label>
                <span>Vanilje Is</span>
-               <input  id="VS"  type = "number" name = "VS" min="0" max="6" value="0" required/>
-           </label>
+               <input class="selec" id="VS"  type = "number" name = "VS" min="0" max="6" value="0" required/>
+            </label>
      </div> 
-        
+     
 
 
      <div class="form-group" id="allergi">
